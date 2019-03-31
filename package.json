@@ -1,0 +1,40 @@
+{
+  "name": "grapql-nodejs",
+  "version": "1.0.0",
+  "description": "Projeto teste para apressentação",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "npm run test",
+    "dev": "nodemon --exec babel-node src/index.js",
+    "build": "NODE_ENV=PRODUCTION babel src -d dist --copy-files",
+    "serve": "NODE_ENV=production node dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-cache-inmemory": "^1.2.10",
+    "apollo-client": "^0.8.2",
+    "apollo-link": "^1.2.3",
+    "apollo-link-http": "^1.5.5",
+    "axios": "^0.18.0",
+    "dataloader": "^1.4.0",
+    "graphql-depth-limit": "^1.1.0",
+    "graphql-voyager": "^1.0.0-rc.26",
+    "graphql-yoga": "^1.17.4",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.4.19",
+    "react": "^15.4.2",
+    "react-apollo": "^0.10.0",
+    "react-dom": "^15.4.2",
+    "react-router": "^3.0.2",
+    "style-loader": "^0.13.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "nodemon": "^1.17.5",
+    "webpack-dev-middleware": "^3.6.1"
+  }
+}

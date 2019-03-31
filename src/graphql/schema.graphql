@@ -1,0 +1,57 @@
+type Role{
+  _id:ID!
+  role:String!  
+}
+
+type Company{
+  id:ID!
+  name:String!
+  role:[Role]
+  employment:[Employment]
+}
+
+
+type Post {
+  _id: String!
+  message: String!
+  user_id: String!    
+  createdOn: String!
+}
+
+type Employment {
+  _id:ID!
+  name: String!
+  email: String!
+  company:Company
+}
+
+input PostInput {   
+  message: String!
+  user_id: String! 
+}
+
+
+input CompanyInput{
+  id:ID!
+  name:String
+}
+
+type Subscription {    
+  newPost:Post
+}
+
+type Query {
+  description: String @deprecated(reason: "Field is deprecated!")     
+  posts: [Post!]!
+  employments:[Employment!]
+  employment(_id:String!):Employment
+  companies:[Company]
+}
+
+type Mutation {    
+  createEmployment( name:String! email:String!, company: CompanyInput ): Employment! 
+  updateEmployment( _id:ID!, name:String! email:String, company:CompanyInput ): Employment!
+  removeEmployment( _id:ID! ): Boolean! 
+  createPost( input:PostInput ): Post!
+  createCompany( name:String ): Company! 
+}
