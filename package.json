@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "npm run test",
-    "dev": "nodemon --exec babel-node src/index.js",
+    "dev": " nodemon --exec babel-node src/index.js",
+    "db":"json-server db.json",
     "build": "NODE_ENV=PRODUCTION babel src -d dist --copy-files",
     "serve": "NODE_ENV=production node dist/index.js"
   },

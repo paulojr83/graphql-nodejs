@@ -51,5 +51,5 @@ const server = new GraphQLServer({
 server.use('/voyager', voyagerMiddleware({ endpointUrl: '/graphql' }));
 
 server.start(options, ({port}) => { 
-  console.log(`My GraphQL is running on http://localhost:${port}`);
+  console.log(` "\ {^_^}/ My GraphQL is running on http://localhost:${port}`);
 });
