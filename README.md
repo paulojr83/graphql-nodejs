@@ -1,1 +1,1 @@
-# grapql-react-nerdzao
+# grapql-react
