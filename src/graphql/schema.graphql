@@ -6,10 +6,10 @@ type Role{
 type Company{
   id:ID!
   name:String!
-  role:[Role]
-  employment:[Employment]
+  role:[ Role ]
+  employment:[ Employment ]
 }
-
+ 
 
 type Post {
   _id: String!
@@ -23,6 +23,7 @@ type Employment {
   name: String!
   email: String!
   company:Company
+  friends:[Employment]
 }
 
 input PostInput {   
@@ -43,7 +44,7 @@ type Subscription {
 type Query {
   description: String @deprecated(reason: "Field is deprecated!")     
   posts: [Post!]!
-  employments:[Employment!]
+  employments:[Employment]
   employment(_id:String!):Employment
   companies:[Company]
 }

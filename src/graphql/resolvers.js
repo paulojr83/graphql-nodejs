@@ -6,7 +6,12 @@ export const pubsub = new PubSub();
 const NEW_POST = 'NEW_POST';
 
 const resolvers = {
-  
+  Employment :{
+    friends: async (parent, args, { models }, info )=>{
+      const friends = await models.Employment.find({ friend_id: parent.id});
+      return friends ;
+    }
+  },
     Subscription: {
       newPost: {
         subscribe: () => pubsub.asyncIterator(NEW_POST),
@@ -30,9 +35,11 @@ const resolvers = {
     Query: {
       
       description: (parent, args, context, info) => 'Hello GraphQL',  
+      
       posts: async (parent, args, { models }) => {                  
         return await models.Post.find({});   
       },
+      
       employments: {
         description: 'Retorna lista de employments.',
         resolverOf: 'Employment.employment', 

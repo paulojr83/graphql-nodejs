@@ -12,9 +12,9 @@ const uri_api = {"uri": "http://localhost:3000"}
 
 const db = startDB({ 
   user: 'graphql', 
-  pwd: '12qwaszx', 
+  pwd: 'graphql', 
   db: 'graphql', 
-  url: 'ds139446.mlab.com:39446' 
+  url: 'mlab.com:39446' 
 })
 
 const mensagens = async (keys, { Post }) =>{    
